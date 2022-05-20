@@ -8,9 +8,24 @@
 using namespace std;
 
 
+//  ============
+    int main() {
 
-int main()
-{
-    std::cout << "Hello World!\n";
-}
+        Menu menu;
+
+        SinglyLinkedList listA;
+
+        do {
+
+            menu.Display();
+            menu.QueryUser();
+            menu.ProcessCommand(listA);
+
+
+        } while (menu.Continue() );
+
+        return 0;
+
+    } // Function main
+//  ==================
 
