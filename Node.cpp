@@ -39,7 +39,7 @@ using namespace std;
 //  Destructor
 //  ==========
 
-	//  All deallocating is performed in SinglyLinkedList class, not here
+	//  All deallocating is performed in SinglyLinkedList class
 
 	Node::~Node(void) {
 
