@@ -29,9 +29,9 @@
 //          End Destructors        
  //         ===============
             
-//          ==========================
-//          Member-Function Prototypes
-//          ==========================
+//          ============================
+//          Public M-Function Prototypes
+//          ============================
 
             void DestroyList();
             Node* GetFirst();
@@ -43,10 +43,13 @@
             int Length();
             void Print();
             void ReversePrint(Node*);
+            void DeleteFirst();
+            void Delete(int);
+            void DeleteLast();
 
-//          =======================
-//          End Function Prototypes
-//          =======================
+//          ================================
+//          End Public M-Function Prototypes
+//          ================================
 
 
 //      ==========
