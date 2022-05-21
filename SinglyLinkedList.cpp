@@ -14,9 +14,9 @@ SinglyLinkedList::SinglyLinkedList() {
 //      Constructor SinglyLinkedList
 //      ============================
 
-	    ConstructorBanner();
+        ConstructorBanner();
 
-	    first = last = nullptr;
+        first = last = nullptr;
 
 
         } // Constructor SinglyLinkedList
@@ -39,11 +39,11 @@ SinglyLinkedList::SinglyLinkedList() {
 
         SinglyLinkedList::~SinglyLinkedList() {
 
-		    DestructorBanner();
-		    DestroyList();
+            DestructorBanner();
+            DestroyList();
 
 
-	    } // Destructor SinglyLinkedList
+        } // Destructor SinglyLinkedList
 //      ================================
 
 //  ===============
@@ -59,83 +59,83 @@ SinglyLinkedList::SinglyLinkedList() {
 //      Public M-Function DestroyList
 //      =============================
 
-	    void SinglyLinkedList::DestroyList() {
+        void SinglyLinkedList::DestroyList() {
 
-		    Node* temp;
+            Node* temp;
 
-		    while (first != nullptr) {
+            while (first != nullptr) {
 
-			    temp = first;
-			    first = first->next;
-			    delete temp;
+                temp = first;
+                first = first->next;
+                delete temp;
 
-		    } // while
+            } // while
 
-		    last = nullptr;
+            last = nullptr;
 
-	    } // Public M-Function DestroyList
+        } // Public M-Function DestroyList
 //      ==================================
 
 //      =====================================
 //      Public M-Function GetFirst (Accessor)
 //      =====================================
 
-		Node* SinglyLinkedList::GetFirst() {
+        Node* SinglyLinkedList::GetFirst() {
 
-			return first;
+            return first;
 
-		} // Public M-Function GetFirst
+        } // Public M-Function GetFirst
 //      ===============================
 
 //      ================================
 //      Public M-Function InitializeList
 //      ================================
 
-		void SinglyLinkedList::InitializeList() {
+        void SinglyLinkedList::InitializeList() {
 
-			DestroyList();
+            DestroyList();
 
-		} // Public M-Function InitializeList
+        } // Public M-Function InitializeList
 //      =====================================
 
 //      =============================
 //      Public M-Function InsertFirst
 //      =============================
 
-		void SinglyLinkedList::InsertFirst(int value) {
+        void SinglyLinkedList::InsertFirst(int value) {
 
-			Node* newNode = new Node(value, first);
+            Node* newNode = new Node(value, first);
 
-			first = newNode;
+            first = newNode;
 
-			if (last == nullptr)
-				last = first;
+            if (last == nullptr)
+                last = first;
 
-		} // Public M-Function InsertFirst
+        } // Public M-Function InsertFirst
 //      ==================================
 
 //      ============================
 //      Public M-Function InsertLast
 //      ============================
 
-		void SinglyLinkedList::InsertLast(int value) {
+        void SinglyLinkedList::InsertLast(int value) {
 
-			if (this->Empty()) {
+            if (this->Empty()) {
 
-				this->InsertFirst(value);
+                this->InsertFirst(value);
 
-			} // if
+            } // if
 
-			else {
+            else {
 
-				Node* newNodePtr = new Node(value, nullptr);
+                Node* newNodePtr = new Node(value, nullptr);
 
-				last->next = newNodePtr;
-				last = newNodePtr;
+                last->next = newNodePtr;
+                last = newNodePtr;
 
-			} // else
+            } // else
 
-		} // Public M-Function InsertLast
+        } // Public M-Function InsertLast
 //      =================================
 
 
@@ -143,88 +143,88 @@ SinglyLinkedList::SinglyLinkedList() {
 //      Public M-Function Insert
 //      ========================
 
-		void SinglyLinkedList::Insert(int value, int location) {
+        void SinglyLinkedList::Insert(int value, int location) {
 
-			int nodeCounter;
-			Node* ptr;
+            int nodeCounter;
+            Node* ptr;
 
-			if ( (location > this->Length() + 1) || (location < 1) ) {
+            if ( (location > this->Length() + 1) || (location < 1) ) {
 
-				cout << endl;
-				cout << "========================" << endl;
-				cout << "Insert Function invoked." << endl;
-				cout << "Insertion location is invalid." << endl;
-				cout << "Terminating execution..." << endl;
-				cout << "========================" << endl;
-				cout << endl;
+                cout << endl;
+                cout << "========================" << endl;
+                cout << "Insert Function invoked." << endl;
+                cout << "Insertion location is invalid." << endl;
+                cout << "Terminating execution..." << endl;
+                cout << "========================" << endl;
+                cout << endl;
 
-			} // then
+            } // then
 
-			else {
+            else {
 
-				if (location == 1)
-					this->InsertFirst(value);
+                if (location == 1)
+                    this->InsertFirst(value);
 
-				else if (location == this->Length() + 1)
-					this->InsertLast(value);
+                else if (location == this->Length() + 1)
+                    this->InsertLast(value);
 
-				else {
+                else {
 
-					nodeCounter = 1;
-					ptr = this->first;
+                    nodeCounter = 1;
+                    ptr = this->first;
 
-					while (nodeCounter < location - 1) {
+                    while (nodeCounter < location - 1) {
 
-						ptr = ptr->next;
-						nodeCounter++;
+                        ptr = ptr->next;
+                        nodeCounter++;
 
-					} // while
+                    } // while
 
 
 
-					Node* newNode = new Node(value, ptr->next);
+                    Node* newNode = new Node(value, ptr->next);
 
-					ptr->next = newNode;
+                    ptr->next = newNode;
 
-				} // nested else
+                } // nested else
 
-			} // else
+            } // else
 
-		} // Public M-Function Insert
+        } // Public M-Function Insert
 //      =============================
 
 //      =======================
 //      Publuc M-Function Empty
 //      =======================
 
-		bool SinglyLinkedList::Empty() {
+        bool SinglyLinkedList::Empty() {
 
-			return (first == nullptr);
+            return (first == nullptr);
 
-		} // Public M-Function Empty
+        } // Public M-Function Empty
 //      ============================
 
 //      ========================
 //      Public M-Function Length
 //      ========================
        
-		int SinglyLinkedList::Length() {
+        int SinglyLinkedList::Length() {
 
-			int nbNodes = 0;
-			Node* ptr;
+            int nbNodes = 0;
+            Node* ptr;
 
-			ptr = this->first;
+            ptr = this->first;
 
-			while (ptr != nullptr) {
+            while (ptr != nullptr) {
 
-				ptr = ptr->next;
-				nbNodes++;
+                ptr = ptr->next;
+                nbNodes++;
 
-			} // while
+            } // while
 
-			return nbNodes;
+            return nbNodes;
 
-		} // Public M-Function Length
+        } // Public M-Function Length
 //      =============================
 
 
@@ -232,44 +232,44 @@ SinglyLinkedList::SinglyLinkedList() {
 //      Publuc M-Function Print
 //      =======================
 
-		void SinglyLinkedList::Print() {
+        void SinglyLinkedList::Print() {
 
-			Node* current;
+            Node* current;
 
-			cout << endl;
-			cout << "===========================" << endl;
-			cout << "The list contains the following data:" << endl;
-			cout << endl;
+            cout << endl;
+            cout << "===========================" << endl;
+            cout << "The list contains the following data:" << endl;
+            cout << endl;
 
-			if (this->Length() == 0) {
+            if (this->Length() == 0) {
 
-				cout << "The list is empty." << endl;
-				cout << "==================" << endl;
+                cout << "The list is empty." << endl;
+                cout << "==================" << endl;
 
 
-			} // then
+            } // then
 
-			else {
+            else {
 
-				cout << "  Beginning..." << endl;
+                cout << "  Beginning..." << endl;
                 
                 current = first;
 
-				while (current != nullptr) {
+                while (current != nullptr) {
 
-					cout << "    " << current->info << endl;
-					
-					current = current->next;
+                    cout << "    " << current->info << endl;
+                    
+                    current = current->next;
 
-				} // while
+                } // while
 
-				cout << "  Ending..." << endl;
-				cout << "===========" << endl;
-				cout << endl;
+                cout << "  Ending..." << endl;
+                cout << "===========" << endl;
+                cout << endl;
 
-			} // else
+            } // else
 
-		} // Public M-Function Print
+        } // Public M-Function Print
 //      ============================
 
 
@@ -278,20 +278,144 @@ SinglyLinkedList::SinglyLinkedList() {
 //      Publuc M-Function ReversePrint
 //      ==============================
 
-		void SinglyLinkedList::ReversePrint(Node* currentNode) {
+        void SinglyLinkedList::ReversePrint(Node* currentNode) {
 
-			
-			if (currentNode != nullptr) {
+            
+            if (currentNode != nullptr) {
 
-				ReversePrint(currentNode->next);
+                ReversePrint(currentNode->next);
 
-				cout << currentNode->info << endl;
+                cout << currentNode->info << endl;
 
-			} // then
+            } // then
 
-		} // Public M-Function ReversePrint
+        } // Public M-Function ReversePrint
 //      ===================================
 
+//      =============================
+//      Public M-Function DeleteFirst
+//      =============================
+// 
+        void SinglyLinkedList::DeleteFirst() {
+
+
+
+            if (this->Empty()) {
+
+                return;
+
+            } // then
+
+            Node* temp = first;
+
+            first = first->next;
+
+            delete temp;
+
+            return;
+                
+
+
+        } // Public M-Function DeleteFirst
+//      ==================================
+//      
+//      ========================
+//      Public M-Function Delete
+//      ========================
+
+        void SinglyLinkedList::Delete(int location) {
+
+            if ((location > this->Length() + 1) || (location < 1)) {
+
+                cout << endl;
+                cout << "========================" << endl;
+                cout << "Delete Function invoked." << endl;
+                cout << "Deletion location is invalid." << endl;
+                cout << "Terminating execution..." << endl;
+                cout << "========================" << endl;
+                cout << endl;
+
+            } // then
+
+            else {
+
+                if (location == 1)
+                    this->DeleteFirst();
+
+                else if (location == this->Length() + 1)
+                    this->DeleteLast();
+
+                else {
+
+                    Node* temp = first;
+
+                    if (location == 1) {
+
+                        first = temp->next;
+
+                        //free(temp); // can also deallocate
+                        delete temp;
+
+                        return;
+
+                    } // then
+
+                    for (int ii = 1; temp != nullptr && ii < location - 1; ii++) {
+
+                        temp = temp->next;
+
+                    } // for
+
+                    if (temp == nullptr || temp->next == nullptr) {
+
+                        return;
+
+                    } // then
+
+                    Node* next = temp->next->next;
+
+                    //free(temp->next); can also deallocate
+                    delete temp->next;
+
+                    temp->next = next;
+
+                } // nested else
+
+            } // outer else
+
+        } // Public M-Function Delete
+//      =============================
+
+
+//      =============================
+//      Public M-Function DeleteLast
+//      ============================
+
+        void SinglyLinkedList::DeleteLast() {
+
+
+            Node* previous = nullptr;
+            Node* temp = first;
+
+            while (temp->next != nullptr) {
+
+                previous = temp;
+                temp = temp->next;
+
+            } // while
+
+            delete temp;
+
+            previous->next = nullptr;
+
+            return;
+
+
+        } // Public M-Function DeleteLast
+//      =================================
+
+// 
+// 
 //  =====================
 //  End Public M-Function
 //  =====================
@@ -306,15 +430,15 @@ SinglyLinkedList::SinglyLinkedList() {
 //      Private M-Function ConstructorBanner
 //      ====================================
 
-		void SinglyLinkedList::ConstructorBanner() {
+        void SinglyLinkedList::ConstructorBanner() {
 
-			cout << endl;
-			cout << "=======================================" << endl;
-			cout << "SinglyLinkedList constructor invoked..." << endl;
-			cout << "=======================================" << endl;
-			cout << endl;
+            cout << endl;
+            cout << "=======================================" << endl;
+            cout << "SinglyLinkedList constructor invoked..." << endl;
+            cout << "=======================================" << endl;
+            cout << endl;
 
-		} // Private M-Function ConstructorBanner
+        } // Private M-Function ConstructorBanner
 //      =========================================
 
 
@@ -322,13 +446,13 @@ SinglyLinkedList::SinglyLinkedList() {
 //      Private M-Function DestructorBanner
 //      ===================================
 
-		void SinglyLinkedList::DestructorBanner() {
+        void SinglyLinkedList::DestructorBanner() {
 
-			cout << endl;
-			cout << "=======================================" << endl;
-			cout << "SinglyLinkedList destructor invoked..." << endl;
-			cout << "=======================================" << endl;
-			cout << endl;
+            cout << endl;
+            cout << "=======================================" << endl;
+            cout << "SinglyLinkedList destructor invoked..." << endl;
+            cout << "=======================================" << endl;
+            cout << endl;
 
-		} // Private M-Function DestructorBanner
+        } // Private M-Function DestructorBanner
 //      ========================================
