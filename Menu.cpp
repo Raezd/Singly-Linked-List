@@ -75,6 +75,9 @@ using namespace std;
             cout << "6: Insert" << endl;
             cout << "7: Print" << endl;
             cout << "8: Reverse Print" << endl;
+            cout << "9: Delete First" << endl;
+            cout << "10: Delete Last" << endl;
+            cout << "11: Delete at Location" << endl;
             cout << endl;
 
         } // Public M-Function Display
@@ -116,6 +119,15 @@ using namespace std;
                     break;
 
                 case 8: userMenuSelection = ReversePrint;
+                    break;
+
+                case 9: userMenuSelection = DeleteFirst;
+                    break;
+
+                case 10: userMenuSelection = DeleteLast;
+                    break;
+
+                case 11: userMenuSelection = Delete;
                     break;
 
                 default: userMenuSelection = ReversePrint;
@@ -168,7 +180,7 @@ using namespace std;
 
                     case InsertLast: 
 
-                        cout << "Enter a valuye to add to the end of the list: ";
+                        cout << "Enter a value to add to the end of the list: ";
                         cin >> intValue;
                         list.InsertLast(intValue);
                         break;
@@ -189,6 +201,19 @@ using namespace std;
                     case ReversePrint: list.ReversePrint(list.GetFirst());
                         break;
 
+                    case DeleteFirst: list.DeleteFirst();
+                        break;
+
+                    case DeleteLast: list.DeleteLast();
+                        break;
+
+                    case Delete: 
+                        
+                        cout << "Enter a node location for deletion: ";
+                        cin >> location;
+                        list.Delete(location);
+                        break;
+
                     default:
                         
                         cout << "Invalid selection." << endl;
@@ -203,5 +228,4 @@ using namespace std;
 
         } // Public M-Function ProcessCommand
 //      =====================================
-
 
