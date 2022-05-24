@@ -251,7 +251,9 @@ SinglyLinkedList::SinglyLinkedList() {
 
             else {
 
+                cout << "==============" << endl;
                 cout << "  Beginning..." << endl;
+                cout << "==============" << endl;
                 
                 current = first;
 
@@ -263,6 +265,7 @@ SinglyLinkedList::SinglyLinkedList() {
 
                 } // while
 
+                cout << "===========" << endl;
                 cout << "  Ending..." << endl;
                 cout << "===========" << endl;
                 cout << endl;
