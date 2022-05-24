@@ -176,6 +176,7 @@ using namespace std;
                         cout << "Enter a value to add to the beginning of the list: ";
                         cin >> intValue;
                         list.InsertFirst(intValue);
+                        list.Print();
                         break;
 
                     case InsertLast: 
@@ -183,6 +184,7 @@ using namespace std;
                         cout << "Enter a value to add to the end of the list: ";
                         cin >> intValue;
                         list.InsertLast(intValue);
+                        list.Print();
                         break;
 
                     case Insert:
@@ -193,6 +195,7 @@ using namespace std;
                         cout << "Enter a node location for insertion: ";
                         cin >> location;
                         list.Insert(intValue, location);
+                        list.Print();
                         break;
 
                     case Print: list.Print();
@@ -202,9 +205,11 @@ using namespace std;
                         break;
 
                     case DeleteFirst: list.DeleteFirst();
+                        list.Print();
                         break;
 
                     case DeleteLast: list.DeleteLast();
+                        list.Print();
                         break;
 
                     case Delete: 
@@ -212,6 +217,7 @@ using namespace std;
                         cout << "Enter a node location for deletion: ";
                         cin >> location;
                         list.Delete(location);
+                        list.Print();
                         break;
 
                     default:
