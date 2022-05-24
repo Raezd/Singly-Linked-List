@@ -265,9 +265,9 @@ SinglyLinkedList::SinglyLinkedList() {
 
                 } // while
 
-                cout << "===========" << endl;
-                cout << "  Ending..." << endl;
-                cout << "===========" << endl;
+                cout << "========" << endl;
+                cout << "  End..." << endl;
+                cout << "========" << endl;
                 cout << endl;
 
             } // else
